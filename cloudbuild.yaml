@@ -14,6 +14,27 @@ steps:
     args: ['run', 'build'] 
     wait_for: ['yarn-install']
 
+  # Build the container image for api
+  - id: docker-build
+    name: 'gcr.io/cloud-builders/docker'
+    dir: 'api'
+    args: ['build', '-t', 'gcr.io/PROJECT_ID/cloudcatsapi', '.']
+  # Push the container image to Container Registry
+  - id: gcr-push
+    name: 'gcr.io/cloud-builders/docker'
+    dir: 'api'
+    args: ['push', 'gcr.io/PROJECT_ID/cloudcatsapi']
+    wait_for: docker-build
+  # Deploy container image to Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    dir: 'api'
+    entrypoint: gcloud
+    args: ['run', 'deploy', 'cloudcatsapi', '--image', 'gcr.io/PROJECT_ID/cloudcatsapi', '--region', 'us-central1', '--platform', 'managed']
+    wait_for: gcr-push
+
+images:
+- gcr.io/PROJECT_ID/cloudcatsapi
+
 artifacts:
   objects:
     location: "gs://${_BUCKET_NAME}/"
