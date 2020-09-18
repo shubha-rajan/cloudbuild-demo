@@ -8,6 +8,9 @@ app = Flask(__name__)
 fake = Faker()
 
 @app.route('/', methods=['GET', 'POST'])
+def hello_world():
+    return 'Hello, World!'
+    
 @app.route('/cat', methods=['GET', 'POST'])
 def get_cat():
     name = urllib.parse.quote(fake.catch_phrase())

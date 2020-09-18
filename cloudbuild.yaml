@@ -1,0 +1,22 @@
+
+steps:
+  # install dependencies for frontend app
+  - id: yarn-install
+    name: node
+    entrypoint: yarn
+    args: ['install']
+    dir: 'frontend'
+    wait_for: ['-']
+  # build frontend app with webpack
+  - name: node
+    entrypoint: yarn
+    dir: 'frontend'
+    args: ['run', 'build'] 
+    wait_for: ['yarn-install']
+
+artifacts:
+  objects:
+    location: "gs://${_BUCKET_NAME}/"
+    paths: [
+      'frontend/*'
+    ]
