@@ -1,0 +1,18 @@
+import urllib.parse
+
+from faker import Faker
+from flask import Flask
+import requests
+app = Flask(__name__)
+
+fake = Faker()
+
+@app.route('/', methods=['GET', 'POST'])
+@app.route('/cat', methods=['GET', 'POST'])
+def get_cat():
+    name = urllib.parse.quote(fake.catch_phrase())
+    url = F"https://cataas.com/cat/says/{name}?color={fake.safe_color_name()}"
+    return url
+
+if __name__ == "__main__":
+    app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))
