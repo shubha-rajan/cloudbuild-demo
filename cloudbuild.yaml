@@ -38,7 +38,18 @@ steps:
     name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     dir: 'api'
     entrypoint: gcloud
-    args: ['run', 'deploy', 'cloudcatsapi', '--image', 'gcr.io/${_PROJECT_ID}/cloudcatsapi', '--region', 'us-central1', '--platform', 'managed']
+    args: [
+      'run',
+      'deploy',
+      'cloudcatsapi',
+      '--image',
+      'gcr.io/${_PROJECT_ID}/cloudcatsapi',
+      '--region',
+      'us-central1',
+      '--platform',
+      'managed',
+      "allow-unauthenticated"
+    ]
     wait_for: ['gcr-push']
 
 images:
