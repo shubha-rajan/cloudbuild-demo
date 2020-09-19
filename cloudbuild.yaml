@@ -25,21 +25,21 @@ steps:
     name: 'gcr.io/cloud-builders/docker'
     dir: 'api'
     args: ['push', 'gcr.io/${_PROJECT_ID}/cloudcatsapi']
-    wait_for: docker-build
+    wait_for: ['docker-build']
 
   # Deploy container image to Cloud Run
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     dir: 'api'
     entrypoint: gcloud
     args: ['run', 'deploy', 'cloudcatsapi', '--image', 'gcr.io/${_PROJECT_ID}/cloudcatsapi', '--region', 'us-central1', '--platform', 'managed']
-    wait_for: gcr-push
+    wait_for: ['gcr-push']
 
 images:
 - gcr.io/${_PROJECT_ID}/cloudcatsapi
 
 artifacts:
   objects:
-    location: "gs://${_BUCKET_NAME}/"
+    location: "gs://${_BUCKET_NAME}"
     paths: [
       'frontend/*',
       'frontend/*.html',
