@@ -7,12 +7,18 @@ steps:
     args: ['install']
     dir: 'frontend'
     wait_for: ['-']
+
   # build frontend app with webpack
-  - name: node
+  - id: yarn-build
+    name: node
     entrypoint: yarn
     dir: 'frontend'
     args: ['run', 'build'] 
     wait_for: ['yarn-install']
+
+  - name: 'gcr.io/cloud-builders/gsutil'
+    args: [ 'cp', 'frontend/*.html', 'gs://${_BUCKET_NAME}']
+    wait_for: ['-']
 
   # Build the container image for api
   - id: docker-build
@@ -28,7 +34,8 @@ steps:
     wait_for: ['docker-build']
 
   # Deploy container image to Cloud Run
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  - id: cloud-run
+    name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     dir: 'api'
     entrypoint: gcloud
     args: ['run', 'deploy', 'cloudcatsapi', '--image', 'gcr.io/${_PROJECT_ID}/cloudcatsapi', '--region', 'us-central1', '--platform', 'managed']
@@ -39,9 +46,7 @@ images:
 
 artifacts:
   objects:
-    location: "gs://${_BUCKET_NAME}"
+    location: "gs://${_BUCKET_NAME}/dist"
     paths: [
-      'frontend/*',
-      'frontend/*.html',
-      'frontend/dist/*'
+      'frontend/dist/*',
     ]
