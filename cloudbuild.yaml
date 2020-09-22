@@ -54,7 +54,7 @@ steps:
       'us-central1',
       '--platform',
       'managed',
-      "allow-unauthenticated"
+      '--allow-unauthenticated'
     ]
     wait_for: ['gcr-push']
 
