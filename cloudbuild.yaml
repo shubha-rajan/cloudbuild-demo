@@ -30,7 +30,7 @@ steps:
   # Use the container image to run tests
   # - name: 'gcr.io/cloud-builders/docker'
   #   entrypoint: 'bash'
-  #   args: ['-c', 'docker run gcr.io/${_PROJECT_ID}/cloudcatsapi ']
+  #   args: ['-c', 'docker run gcr.io/${_PROJECT_ID}/cloudcatsapi pytest -v']
 
   # Push the container image to Container Registry
   - id: gcr-push
