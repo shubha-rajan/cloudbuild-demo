@@ -26,6 +26,12 @@ steps:
     dir: 'api'
     args: ['build', '-t', 'gcr.io/${_PROJECT_ID}/cloudcatsapi', '.']
     wait_for: ['-']
+
+  # Use the container image to run tests
+  # - name: 'gcr.io/cloud-builders/docker'
+  #   entrypoint: 'bash'
+  #   args: ['-c', 'docker run gcr.io/${_PROJECT_ID}/cloudcatsapi ']
+
   # Push the container image to Container Registry
   - id: gcr-push
     name: 'gcr.io/cloud-builders/docker'

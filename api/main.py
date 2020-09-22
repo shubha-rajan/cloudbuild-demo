@@ -2,8 +2,12 @@ import urllib.parse
 
 from faker import Faker
 from flask import Flask
+from flask_cors import CORS
 import requests
+
+
 app = Flask(__name__)
+CORS(app)
 
 fake = Faker()
 

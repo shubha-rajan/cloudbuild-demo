@@ -1,5 +1,5 @@
-const axios = require('axios').default;
-const catApi = 'http://localhost:5000';
+// const axios = require('axios').default;
+// const catApi = 'http://localhost:5000';
 
 
 // $(document).ready(function () {
