@@ -102,6 +102,8 @@ gcloud builds submit --config cloudbuild.yaml --substitutions=_PROJECT_ID=your-p
     ![Configure Trigger](/screenshots/configure-trigger.png)
     - You can tell Cloud Build which specific files to look for changes in to trigger a build. Here, we’re telling Cloud Build to ignore .gitignore and our Markdown files.
     ![Configure Trigger](/screenshots/configure-trigger2.png)
+    - You can also specify the substitution variables that we previously passed in through the command line
+    ![Configure Trigger](/screenshots/configure-trigger3.png)
 
 ## Testing the Build Trigger
 
