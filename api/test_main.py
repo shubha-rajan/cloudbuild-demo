@@ -11,3 +11,4 @@ def test_cat():
 
     assert response.status_code == 200
     assert b"https://cataas.com/cat/says/" in response.data 
+
