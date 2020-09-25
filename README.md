@@ -12,7 +12,8 @@ This is a sample code repository for the hands-on Build/Test/Deploy with Cloud B
     - Once the Cloud Shell is open, be sure to run `gcloud config set project <your-project-id>`. You should see your project name show up in the bash prompt like this:
     ![Cloudshell Prompt](/screenshots/cloudshell-prompt.png)
     - If you run into issues, make sure you are using the correct Project ID. Your project ID can be found on the home page of the Cloud Console:
-     ![Project Info](/screenshots/project-info.png)
+    
+        ![Project Info](/screenshots/project-info.png)
 
 1. Enable the following APIs
     - [Cloud Build](https://console.cloud.google.com/apis/library/cloudbuild.googleapis.com)
