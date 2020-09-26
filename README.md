@@ -63,7 +63,7 @@ This is a sample code repository for the hands-on Build/Test/Deploy with Cloud B
         - name: 'gcr.io/cloud-builders/docker'
           entrypoint: 'bash'
           args: ['-c', 'docker run gcr.io/${_PROJECT_ID}/cloudcatsapi pytest -v']
-          wait_for: ["docker-build"] # Added this line
+          wait_for: ['docker-build'] # Added this line
      ```
      - Next, let's make sure the next step, `gcr-push`, waits for this one to complete:
     ```yaml
@@ -72,7 +72,7 @@ This is a sample code repository for the hands-on Build/Test/Deploy with Cloud B
           name: 'gcr.io/cloud-builders/docker'
           entrypoint: 'bash'
           args: ['-c', 'docker run gcr.io/${_PROJECT_ID}/cloudcatsapi pytest -v']
-          wait_for: ["docker-build"] 
+          wait_for: ['docker-build'] 
         
           # Push the container image to Container Registry
         - id: gcr-push
