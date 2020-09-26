@@ -40,18 +40,20 @@ This is a sample code repository for the hands-on Build/Test/Deploy with Cloud B
 1. [Create a new Cloud Storage bucket](https://console.cloud.google.com/storage/browser?). (Recommended: Give your bucket the same name as your project). This is where we will deploy our static frontend for the demo.
 
 ![Create Storage Bucket](/screenshots/create-storage-bucket.png)
-    - Make the storage bucket publicly accessible
-        - Click on the "Permissions" tab
+
+- Make the storage bucket publicly accessible
+    
+    - Click on the "Permissions" tab
+    
+    ![Bucket Permissions](/screenshots/bucket-permissions.png)
         
-        ![Bucket Permissions](/screenshots/bucket-permissions.png)
+    - Click on "Add"
+    
+    ![Add Permissions](/screenshots/add-permissions.png)
         
-        - Click on "Add"
-        
-        ![Add Permissions](/screenshots/add-permissions.png)
-        
-        - Give `Storage Object Viewer` permissions to `allUsers`
-        
-        ![Bucket Permissions 2](/screenshots/bucket-permissions2.png)
+    - Give `Storage Object Viewer` permissions to `allUsers`
+    
+    ![Bucket Permissions 2](/screenshots/bucket-permissions2.png)
 
 ## Manually running a build
 1. You'll notice in [cloudbuild.yaml](/cloudbuild.yaml) that one of our build steps (to run the tests for the backend) is commented out. We want to make sure this step runs after we build our container but before we deploy it. 
