@@ -38,6 +38,7 @@ This is a sample code repository for the hands-on Build/Test/Deploy with Cloud B
         --role=roles/iam.serviceAccountUser
     ```
 1. [Create a new Cloud Storage bucket](https://console.cloud.google.com/storage/browser?). (Recommended: Give your bucket the same name as your project). This is where we will deploy our static frontend for the demo.
+
 ![Create Storage Bucket](/screenshots/create-storage-bucket.png)
     - Make the storage bucket publicly accessible
         - Click on the "Permissions" tab
