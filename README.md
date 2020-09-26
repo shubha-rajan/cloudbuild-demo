@@ -90,19 +90,29 @@ gcloud builds submit --config cloudbuild.yaml --substitutions=_PROJECT_ID=your-p
 
 1. Connect your Github Repository
     - In the Cloud Console, navigate to Cloud Build > Triggers. Then click “Connect Repository”
-    ![Create Trigger](/screenshots/create-trigger.png) 
-    ![Create Trigger](/screenshots/create-trigger2.png)
+    
+    <img src="/screenshots/create-trigger.png" width="30%" /> 
+    <img src="/screenshots/create-trigger2.png" width="60%" /> 
+    
     - Select GitHub as your source. You should be prompted to sign in to GitHub to authorize Cloud Build.
-    ![Create Trigger](/screenshots/create-trigger3.png) 
-    ![Create Trigger](/screenshots/create-trigger4.png)
+    
+    <img src="/screenshots/create-trigger3.png" width="60%" /> 
+    <img src="/screenshots/create-trigger4.png" width="30%" /> 
+    
     - Give Cloud Build access to your repository.
-    ![Create Trigger](/screenshots/create-trigger6.png) 
-    ![Create Trigger](/screenshots/create-trigger5.png)
+    
+    <img src="/screenshots/create-trigger6.png" width="45%" /> 
+    <img src="/screenshots/create-trigger5.png" width="45%" /> 
+    
 2. Configure settings for the GitHub Trigger
     - Name the trigger, give it a description, and specify that it’s activated by pushing to the master branch
-    ![Configure Trigger](/screenshots/configure-trigger.png)
+    
+    <img src="/screenshots/configure-trigger.png" width="50%" />
+    
     - You can tell Cloud Build which specific files to look for changes in to trigger a build. Here, we’re telling Cloud Build to ignore .gitignore and our Markdown files.
+    
     ![Configure Trigger](/screenshots/configure-trigger2.png)
+    
     - You can also specify the substitution variables that we previously passed in through the command line
     ![Configure Trigger](/screenshots/configure-trigger3.png)
 
