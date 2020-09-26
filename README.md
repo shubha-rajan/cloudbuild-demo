@@ -41,10 +41,15 @@ This is a sample code repository for the hands-on Build/Test/Deploy with Cloud B
 ![Create Storage Bucket](/screenshots/create-storage-bucket.png)
     - Make the storage bucket publicly accessible
         - Click on the "Permissions" tab
+        
         ![Bucket Permissions](/screenshots/bucket-permissions.png)
+        
         - Click on "Add"
+        
         ![Add Permissions](/screenshots/add-permissions.png)
+        
         - Give `Storage Object Viewer` permissions to `allUsers`
+        
         ![Bucket Permissions 2](/screenshots/bucket-permissions2.png)
 
 ## Manually running a build
