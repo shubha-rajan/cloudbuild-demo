@@ -18,7 +18,7 @@ def hello_world():
 @app.route('/cat', methods=['GET', 'POST'])
 def get_cat():
     name = urllib.parse.quote(fake.catch_phrase())
-    url = F"https://cataas.com/cat/says/{name}?color={fake.safe_color_name()}"
+    url = F"https://cataas.com/cat/says/{name}?color=white"
     return url
 
 if __name__ == "__main__":
