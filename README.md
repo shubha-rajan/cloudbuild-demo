@@ -85,7 +85,9 @@ This is a sample code repository for the hands-on Build/Test/Deploy with Cloud B
 
 1. In the Cloud Shell, run 
 ```bash
-gcloud builds submit --config cloudbuild.yaml --substitutions=_PROJECT_ID=your-project-id,_BUCKET_NAME=your-bucket-name
+gcloud builds submit --config cloudbuild.yaml \
+	--substitutions _BUCKET_NAME=your-bucket-name,_PROJECT_ID=your-project-id
+
 ```
 
 - replace `your-project-id` with the Project ID found on the Cloud Console home page, and `your-bucket-name` with the name you gave your bucket
