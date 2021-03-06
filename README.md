@@ -128,7 +128,7 @@ gcloud builds submit --config cloudbuild.yaml \
 
 ## Testing the Build Trigger
 
-1. We're going to connect the website with the backend API, merge those new changes to the master branch, and trigger a new build.
+1. We're going to connect the website with the backend API, merge those new changes to the main branch, and trigger a new build.
     - Navigate to [frontend/src/js/gallery.js](frontend/src/js/gallery.js). You should see some commented out code. Let's uncomment it.
     ```javascript
     const axios = require('axios').default;
@@ -153,4 +153,4 @@ gcloud builds submit --config cloudbuild.yaml \
     const axios = require('axios').default;
     const catApi = "https://cloudcatsapi-k3dzw45ylq-uc.a.run.app"; #Changed this line
     ```
-    - Now merge those changes into the master branch and watch the build complete!
+    - Now merge those changes into the main branch and watch the build complete!
