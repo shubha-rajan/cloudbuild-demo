@@ -1,4 +1,4 @@
-# vGHC-cloudbuild-demo
+# Build, Test and Deploy with Google Cloud Build
 
 This is a sample code repository for the hands-on Build/Test/Deploy with Cloud Build workshop, first presented at vGHC 2020 Open Source Day.
 
