@@ -1,6 +1,6 @@
 # vGHC-cloudbuild-demo
 
-This is a sample code repository for the hands-on Build/Test/Deploy with Cloud Build workshop at vGHC 2020 Open Source Day.
+This is a sample code repository for the hands-on Build/Test/Deploy with Cloud Build workshop, first presented at vGHC 2020 Open Source Day.
 
 ## Setup 
 
