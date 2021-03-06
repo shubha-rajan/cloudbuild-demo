@@ -115,7 +115,7 @@ gcloud builds submit --config cloudbuild.yaml \
     <img src="/screenshots/create-trigger5.png" width="45%" /> 
     
 2. Configure settings for the GitHub Trigger
-    - Name the trigger, give it a description, and specify that it’s activated by pushing to the master branch
+    - Name the trigger, give it a description, and specify that it’s activated by pushing to the main branch
     
     <img src="/screenshots/configure-trigger.png" width="50%" />
     
