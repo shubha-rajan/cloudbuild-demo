@@ -10,7 +10,7 @@
   "author": "Shubha Rajan",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.20.0",
+    "axios": "^0.21.1",
     "jquery": "^3.5.1",
     "lightbox2": "^2.9.0"
   },
